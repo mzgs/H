@@ -20,6 +20,7 @@ import (
 import "golang.org/x/crypto/bcrypt"
 
 var P = log.Println
+var Format = fmt.Sprintf
 
 func HashAndSalt(pwd []byte) string {
 
@@ -48,8 +49,6 @@ func ComparePasswords(hashedPwd string, plainPwd []byte) bool {
 
 	return true
 }
-
-var Format = fmt.Sprintf
 
 func F(s string) float64 {
 	f, err := strconv.ParseFloat(s, 64)

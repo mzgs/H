@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="063218a8-9ff3-41d1-8a08-86bba8cd2aa0" name="Default Changelist" comment="add functions">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +39,7 @@
     <property name="last_opened_file_path" value="$USER_HOME$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
@@ -52,10 +53,10 @@
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state x="703" y="201" key="CommitChangelistDialog2" timestamp="1597742903625">
+    <state x="703" y="201" key="CommitChangelistDialog2" timestamp="1597743823784">
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
-    <state x="703" y="201" key="CommitChangelistDialog2/0.25.1920.1090@0.25.1920.1090" timestamp="1597742903625" />
+    <state x="703" y="201" key="CommitChangelistDialog2/0.25.1920.1090@0.25.1920.1090" timestamp="1597743823784" />
     <state x="986" y="560" key="Github.ShareDialog" timestamp="1597742144527">
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
