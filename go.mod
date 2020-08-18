@@ -1,4 +1,4 @@
-module H
+module github.com/mzgs/H
 
 go 1.14
 
