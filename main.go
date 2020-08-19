@@ -7,7 +7,6 @@ import (
 	"encoding/base64"
 	"errors"
 	"fmt"
-	"github.com/savsgio/atreugo/v11"
 	"io"
 	"io/ioutil"
 	"log"
@@ -137,27 +136,6 @@ func Truncate(text string, length int) string {
 func Str(i interface{}) string {
 
 	return fmt.Sprintf("%v", i)
-}
-
-// ============================================== FORM HELPER ======================================================
-type Form struct {
-	Ctx *atreugo.RequestCtx
-}
-
-func (f Form) Get(key string) string {
-	return string(f.Ctx.FormValue(key))
-}
-
-func (f Form) GetFloat(key string) float64 {
-	return F(f.Get(key))
-}
-
-func (f Form) GetInt(key string) int {
-	return Int(f.Get(key))
-}
-
-func (f Form) PrintPostData() {
-	P(string(f.Ctx.PostBody()))
 }
 
 func TimeTrack(start time.Time, name string) {
