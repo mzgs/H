@@ -14,6 +14,7 @@ import (
 	"net/http"
 	"runtime"
 	"strconv"
+	"strings"
 	"time"
 )
 import "golang.org/x/crypto/bcrypt"
@@ -250,4 +251,47 @@ func GetRequest(url string) ([]byte, error) {
 	contents, _ := ioutil.ReadAll(response.Body)
 
 	return contents, nil
+}
+
+// Tif is a simple implementation of the dear ternary IF operator
+func Tif(condition bool, tifThen, tifElse interface{}) interface{} {
+	if condition {
+		return tifThen
+	}
+
+	return tifElse
+}
+
+// MatchesAny returns true if any of the given items matches ( equals ) the subject ( search parameter )
+func MatchesAny(search interface{}, items ...interface{}) bool {
+	for _, v := range items {
+		if fmt.Sprintf("%T", search) == fmt.Sprintf("%T", v) {
+			if search == v {
+				return true
+			}
+		}
+	}
+
+	return false
+}
+
+// StringReplaceAll keeps replacing until there's no more ocurrences to replace.
+func StringReplaceAll(original string, replacementPairs ...string) string {
+	if original == "" {
+		return original
+	}
+
+	r := strings.NewReplacer(replacementPairs...)
+
+	for {
+		result := r.Replace(original)
+
+		if original != result {
+			original = result
+		} else {
+			break
+		}
+	}
+
+	return original
 }

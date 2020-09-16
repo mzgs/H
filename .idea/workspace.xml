@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="063218a8-9ff3-41d1-8a08-86bba8cd2aa0" name="Default Changelist" comment="">
+    <list default="true" id="063218a8-9ff3-41d1-8a08-86bba8cd2aa0" name="Default Changelist" comment="remove form helper">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
@@ -42,23 +42,25 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="change mod" />
     <MESSAGE value="add functions" />
     <MESSAGE value="a" />
-    <option name="LAST_COMMIT_MESSAGE" value="a" />
+    <MESSAGE value="remove form helper" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove form helper" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state x="703" y="201" key="CommitChangelistDialog2" timestamp="1597743851448">
+    <state x="703" y="201" key="CommitChangelistDialog2" timestamp="1597831457183">
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
-    <state x="703" y="201" key="CommitChangelistDialog2/0.25.1920.1090@0.25.1920.1090" timestamp="1597743851448" />
+    <state x="703" y="201" key="CommitChangelistDialog2/0.25.1920.1090@0.25.1920.1090" timestamp="1597831457183" />
     <state x="986" y="560" key="Github.ShareDialog" timestamp="1597742144527">
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
@@ -67,9 +69,9 @@
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
     <state x="970" y="384" key="Github.UntrackedFilesDialog/0.25.1920.1090@0.25.1920.1090" timestamp="1597742148829" />
-    <state x="713" y="388" key="Vcs.Push.Dialog.v2" timestamp="1597743853767">
+    <state x="713" y="388" key="Vcs.Push.Dialog.v2" timestamp="1597831401342">
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
-    <state x="713" y="388" key="Vcs.Push.Dialog.v2/0.25.1920.1090@0.25.1920.1090" timestamp="1597743853767" />
+    <state x="713" y="388" key="Vcs.Push.Dialog.v2/0.25.1920.1090@0.25.1920.1090" timestamp="1597831401342" />
   </component>
 </project>
