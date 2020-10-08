@@ -295,3 +295,17 @@ func StringReplaceAll(original string, replacementPairs ...string) string {
 
 	return original
 }
+
+func Line() {
+	fmt.Println("------------------------------------------------------------------")
+}
+
+func RemoveFromString(original string, replacementPairs ...string) string {
+	var ar []string
+	for _, value := range replacementPairs {
+		ar = append(ar, value, "")
+	}
+
+	return StringReplaceAll(original, ar...)
+
+}
