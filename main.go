@@ -300,6 +300,12 @@ func Line() {
 	fmt.Println("------------------------------------------------------------------")
 }
 
+func PrintInLine(i interface{}) {
+	Line()
+	P(i)
+	Line()
+}
+
 func RemoveFromString(original string, replacementPairs ...string) string {
 	var ar []string
 	for _, value := range replacementPairs {
