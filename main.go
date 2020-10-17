@@ -7,15 +7,20 @@ import (
 	"encoding/base64"
 	"errors"
 	"fmt"
+	"golang.org/x/text/runes"
+	"golang.org/x/text/transform"
+	"golang.org/x/text/unicode/norm"
 	"io"
 	"io/ioutil"
 	"log"
 	"math"
 	"net/http"
+	"regexp"
 	"runtime"
 	"strconv"
 	"strings"
 	"time"
+	"unicode"
 )
 import "golang.org/x/crypto/bcrypt"
 
@@ -314,4 +319,25 @@ func RemoveFromString(original string, replacementPairs ...string) string {
 
 	return StringReplaceAll(original, ar...)
 
+}
+
+func UrlString(s string) string {
+	return StringReplaceAll(CleanIndexText(s), " ", "-")
+}
+
+func CleanIndexText(text string) string {
+	text = strings.ToLowerSpecial(unicode.TurkishCase, text)
+
+	text = StringReplaceAll(text, "ı", "i")
+
+	t := transform.Chain(norm.NFD, runes.Remove(runes.In(unicode.Mn)), norm.NFC)
+	text, _, _ = transform.String(t, text)
+
+	reg, err := regexp.Compile(`[^a-zA-Z0-9 ]`)
+	if err != nil {
+		log.Fatal(err)
+	}
+	text = reg.ReplaceAllString(text, "")
+
+	return text
 }
