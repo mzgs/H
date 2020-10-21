@@ -384,3 +384,14 @@ func DownloadFile(url, filepath string) error {
 	_, err = io.Copy(out, resp.Body)
 	return err
 }
+
+func GetTextBetween(text, strStart, strEnd string) string {
+	i1 := strings.Index(text, strStart) + len(strStart)
+	i2 := len(text)
+
+	if strEnd != "" {
+		i2 = strings.Index(text[i1:], strEnd) + i1
+	}
+
+	return text[i1:i2]
+}

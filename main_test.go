@@ -61,3 +61,32 @@ type BtcturkSymbol struct {
 	NumeratorSymbol   string  `json:"numeratorSymbol"`
 	Order             int     `json:"order"`
 }
+
+func TestBetween(t *testing.T) {
+
+	text := `
+	2236. [3:576, Hadîs No: 4367]
+Şüpheli şeylerden hassasiyetle sakınan kişinin iki rekât namazı, şüpheli şeylere bulaşan kimsenin bin rekât namazından daha üstün­dür.[104]
+ 
+2237. [4:2, Hadîs No: 4368.]
+Ebû Hüreyre'den (r.a.) rivayetle:
+Aklın başı, insanlarla hoş geçinmektir. Dünyada iyilik sahibi olan­lar, âhirette de iyilik sahibidirler.[105]
+ 
+2238. [4:2, Hadîs No: 4369]
+Said bin Müseyyeb rivayet ediyor:
+Meşverete muhtaç olmayan hiç bir kimse yoktur.[106]
+ 
+2239. [4:6, Hadîs No: 4378]
+îbni Abbas'dan (r.a.) rivayetle:
+Ben, melekleri Hanıza bin Abdulmuttalib'in ve Hanzale bin Rahb'in cenazesini yıkarken gördüm.[107]
+ 
+
+`
+
+	between := GetTextBetween(text, "Hadîs No: 4367]", "]")
+	PL(between)
+
+	b2 := GetTextBetween(between, "[", "")
+	PL(b2)
+
+}
