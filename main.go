@@ -7,6 +7,7 @@ import (
 	"encoding/base64"
 	"errors"
 	"fmt"
+	jsoniter "github.com/json-iterator/go"
 	"golang.org/x/text/runes"
 	"golang.org/x/text/transform"
 	"golang.org/x/text/unicode/norm"
@@ -15,6 +16,7 @@ import (
 	"log"
 	"math"
 	"net/http"
+	"os"
 	"regexp"
 	"runtime"
 	"strconv"
@@ -305,9 +307,9 @@ func Line() {
 	fmt.Println("------------------------------------------------------------------")
 }
 
-func PrintInLine(i interface{}) {
+func PL(i ...interface{}) {
 	Line()
-	P(i)
+	P(i...)
 	Line()
 }
 
@@ -340,4 +342,45 @@ func CleanIndexText(text string) string {
 	text = reg.ReplaceAllString(text, "")
 
 	return text
+}
+
+func ArrayFromUrl(url, path string, arr interface{}) error {
+
+	bytedata, _ := GetRequest(url)
+
+	paths := strings.Split(path, ".")
+	get := jsoniter.Get(bytedata, paths[0])
+
+	if len(paths) > 1 {
+
+		for i := 1; i < len(paths); i++ {
+
+			get = get.Get(paths[i])
+		}
+
+	}
+
+	return jsoniter.Unmarshal([]byte(get.ToString()), arr)
+
+}
+
+func DownloadFile(url, filepath string) error {
+
+	// Get the data
+	resp, err := http.Get(url)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+
+	// Create the file
+	out, err := os.Create(filepath)
+	if err != nil {
+		return err
+	}
+	defer out.Close()
+
+	// Write the body to file
+	_, err = io.Copy(out, resp.Body)
+	return err
 }
