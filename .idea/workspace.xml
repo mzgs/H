@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="063218a8-9ff3-41d1-8a08-86bba8cd2aa0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,10 +152,10 @@
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state x="703" y="201" key="CommitChangelistDialog2" timestamp="1603321444693">
+    <state x="703" y="201" key="CommitChangelistDialog2" timestamp="1603321631498">
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
-    <state x="703" y="201" key="CommitChangelistDialog2/0.25.1920.1090@0.25.1920.1090" timestamp="1603321444693" />
+    <state x="703" y="201" key="CommitChangelistDialog2/0.25.1920.1090@0.25.1920.1090" timestamp="1603321631498" />
     <state x="986" y="560" key="Github.ShareDialog" timestamp="1597742144527">
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
@@ -184,10 +184,10 @@
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
     <state x="622" y="206" key="SettingsEditor/0.25.1920.1090@0.25.1920.1090" timestamp="1602957497163" />
-    <state x="713" y="388" key="Vcs.Push.Dialog.v2" timestamp="1603321447751">
+    <state x="713" y="388" key="Vcs.Push.Dialog.v2" timestamp="1603321632980">
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
-    <state x="713" y="388" key="Vcs.Push.Dialog.v2/0.25.1920.1090@0.25.1920.1090" timestamp="1603321447751" />
+    <state x="713" y="388" key="Vcs.Push.Dialog.v2/0.25.1920.1090@0.25.1920.1090" timestamp="1603321632980" />
     <state x="913" y="484" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602957541402">
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
