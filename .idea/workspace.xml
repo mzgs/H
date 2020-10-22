@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="063218a8-9ff3-41d1-8a08-86bba8cd2aa0" name="Default Changelist" comment="">
+    <list default="true" id="063218a8-9ff3-41d1-8a08-86bba8cd2aa0" name="Default Changelist" comment="add error">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
@@ -146,16 +146,17 @@
     <MESSAGE value="add printinline" />
     <MESSAGE value="add some functions" />
     <MESSAGE value="add betweentext" />
-    <option name="LAST_COMMIT_MESSAGE" value="add betweentext" />
+    <MESSAGE value="add error" />
+    <option name="LAST_COMMIT_MESSAGE" value="add error" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state x="703" y="201" key="CommitChangelistDialog2" timestamp="1603321631498">
+    <state x="703" y="201" key="CommitChangelistDialog2" timestamp="1603379318881">
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
-    <state x="703" y="201" key="CommitChangelistDialog2/0.25.1920.1090@0.25.1920.1090" timestamp="1603321631498" />
+    <state x="703" y="201" key="CommitChangelistDialog2/0.25.1920.1090@0.25.1920.1090" timestamp="1603379318881" />
     <state x="986" y="560" key="Github.ShareDialog" timestamp="1597742144527">
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
@@ -184,13 +185,13 @@
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
     <state x="622" y="206" key="SettingsEditor/0.25.1920.1090@0.25.1920.1090" timestamp="1602957497163" />
-    <state x="713" y="388" key="Vcs.Push.Dialog.v2" timestamp="1603321632980">
+    <state x="713" y="388" key="Vcs.Push.Dialog.v2" timestamp="1603378308395">
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
-    <state x="713" y="388" key="Vcs.Push.Dialog.v2/0.25.1920.1090@0.25.1920.1090" timestamp="1603321632980" />
-    <state x="913" y="484" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602957541402">
+    <state x="713" y="388" key="Vcs.Push.Dialog.v2/0.25.1920.1090@0.25.1920.1090" timestamp="1603378308395" />
+    <state x="913" y="484" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603378316353">
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
-    <state x="913" y="484" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.1920.1090@0.25.1920.1090" timestamp="1602957541402" />
+    <state x="913" y="484" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.1920.1090@0.25.1920.1090" timestamp="1603378316353" />
   </component>
 </project>

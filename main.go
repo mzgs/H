@@ -313,6 +313,12 @@ func PL(i ...interface{}) {
 	Line()
 }
 
+func BL(i ...interface{}) {
+
+	P(i...)
+	Line()
+}
+
 func RemoveFromString(original string, removePairs ...string) string {
 	var ar []string
 	for _, value := range removePairs {
@@ -393,6 +399,7 @@ func GetTextBetween(text, strStart, strEnd string) string {
 		i2 = strings.Index(text[i1:], strEnd) + i1
 	}
 
+	//error
 	if i2 < i1 {
 		PL("GetTextBetween ERROR!", "strStart:", strStart, "strEnd:", strEnd)
 	}
