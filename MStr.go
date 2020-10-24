@@ -31,6 +31,18 @@ func (m Mstr) Split(sep string) []string {
 	return strings.Split(m.String(), sep)
 }
 
+func (m Mstr) Lines() []string {
+	return m.Split("\n")
+}
+
+func (m Mstr) Index(substr string) int {
+	return strings.Index(m.String(), substr)
+}
+
+func (m Mstr) LastIndex(substr string) int {
+	return strings.LastIndex(m.String(), substr)
+}
+
 func (m *Mstr) Set(s string) {
 	*m = Mstr(s)
 }
