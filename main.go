@@ -26,7 +26,7 @@ import (
 )
 import "golang.org/x/crypto/bcrypt"
 
-var P = log.Println
+var P = fmt.Println
 var Format = fmt.Sprintf
 
 func HashAndSalt(pwd []byte) string {

@@ -90,3 +90,38 @@ Ben, melekleri HanÄ±za bin Abdulmuttalib'in ve Hanzale bin Rahb'in cenazesini yÄ
 	PL(b2)
 
 }
+
+func TestMstr_Remove(t *testing.T) {
+
+	s := Mstr("deneme bu nasil sanki bu")
+
+	s.Remove("bu")
+
+	if s != "deneme  nasil sanki " {
+		t.Error("Wrong result:", s)
+	}
+}
+
+func TestMstr_Replace(t *testing.T) {
+
+	s := Mstr("deneme bu nasil sanki bu")
+
+	s.Replace("bu", "mzgs")
+
+	if s != "deneme mzgs nasil sanki mzgs" {
+		t.Error("Wrong result:", s)
+	}
+
+}
+
+func TestMstr_Between(t *testing.T) {
+
+	s := Mstr("deneme bu nasil sanki bu")
+
+	between := s.Between("bu", "sanki")
+
+	if between != " nasil " {
+		t.Error("Wrong result:", between)
+	}
+
+}
