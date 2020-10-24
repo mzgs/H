@@ -406,3 +406,11 @@ func GetTextBetween(text, strStart, strEnd string) string {
 
 	return text[i1:i2]
 }
+
+func ReadFile(path string) string {
+	r, err := ioutil.ReadFile(path)
+	if err != nil {
+		P(err)
+	}
+	return string(r)
+}
