@@ -17,6 +17,7 @@ import (
 	"math"
 	"net/http"
 	"os"
+	"os/exec"
 	"regexp"
 	"runtime"
 	"strconv"
@@ -437,4 +438,37 @@ func AlignText(w int, s ...string) string {
 
 func Space(n int) string {
 	return strings.Repeat(" ", n)
+}
+
+func AppleScriptCommand(s string) string {
+	command := exec.Command("/usr/bin/osascript", "-e", s)
+
+	stdout, _ := command.CombinedOutput()
+
+	return string(stdout)
+
+}
+
+func IsWindows() bool {
+	return runtime.GOOS == "windows"
+}
+
+func IsMacos() bool {
+	return runtime.GOOS == "darwin"
+}
+
+func Command(command string) string {
+
+	var cmd *exec.Cmd
+
+	if IsWindows() {
+		cmd = exec.Command("cmd", "/C", command)
+
+	} else {
+		cmd = exec.Command("/bin/zsh", "-c", command)
+	}
+
+	stdout, _ := cmd.CombinedOutput()
+
+	return string(stdout)
 }
