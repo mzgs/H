@@ -1,6 +1,8 @@
 package H
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestUrl(t *testing.T) {
 
@@ -123,5 +125,31 @@ func TestMstr_Between(t *testing.T) {
 	if between != " nasil " {
 		t.Error("Wrong result:", between)
 	}
+
+}
+
+func TestAlignText(t *testing.T) {
+
+	s1 := "first line "
+	s2 := "second line "
+	s3 := "third line "
+
+	f1 := s1
+	f2 := s1 + "hello"
+	f3 := s1 + "hello world"
+
+	//P(f1, AlignText(40 + (40-len(f1)), s2), AlignText(40, s3))
+	//P(f2, AlignText(40+ (40-len(f2)), s2 + "n"), AlignText(40, s3 + " dene"))
+	//P(f3, AlignText(40+ (40-len(f3)) , s2+" yes"), AlignText(40, s3))
+
+	//N := 40
+	//
+	//P(f1, Space(N - len(f1))+ s2,s3)
+	//P(f2,Space(N - len(f2))+s2,s3)
+	//P(f3,Space(N - len(f3))+s2 ,s3)
+
+	P(AlignText(40, f1, s2+"sad asd asd asd asd", s3+" dene"))
+	P(AlignText(40, f2, s2+"n", s3))
+	P(AlignText(40, f3, s2+" yes", s3))
 
 }

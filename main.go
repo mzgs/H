@@ -414,3 +414,27 @@ func ReadFile(path string) string {
 	}
 	return string(r)
 }
+
+func AlignText(w int, s ...string) string {
+	//return fmt.Sprintf(fmt.Sprintf("%%%ds", w),s)
+
+	var x string
+	var oldLen int
+
+	for i, value := range s {
+		space := w - oldLen
+		if i == 0 {
+			space = 0
+		}
+
+		x += Space(space) + value
+		oldLen = len(value)
+
+	}
+
+	return x
+}
+
+func Space(n int) string {
+	return strings.Repeat(" ", n)
+}

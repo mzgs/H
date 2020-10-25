@@ -5,12 +5,17 @@ import "strings"
 type Mstr string
 
 func (m *Mstr) Remove(removePairs ...string) {
-	s := RemoveFromString(string(*m), removePairs...)
+	s := RemoveFromString(m.String(), removePairs...)
 	m.Set(s)
 }
 
 func (m *Mstr) Replace(replacementPairs ...string) {
 	s := StringReplaceAll(m.String(), replacementPairs...)
+	m.Set(s)
+}
+
+func (m *Mstr) RemoveNewLines() {
+	s := RemoveFromString(m.String(), "\n")
 	m.Set(s)
 }
 
