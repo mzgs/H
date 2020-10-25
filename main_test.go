@@ -130,26 +130,21 @@ func TestMstr_Between(t *testing.T) {
 
 func TestAlignText(t *testing.T) {
 
-	s1 := "first line "
-	s2 := "second line "
-	s3 := "third line "
-
-	f1 := s1
-	f2 := s1 + "hello"
-	f3 := s1 + "hello world"
-
-	//P(f1, AlignText(40 + (40-len(f1)), s2), AlignText(40, s3))
-	//P(f2, AlignText(40+ (40-len(f2)), s2 + "n"), AlignText(40, s3 + " dene"))
-	//P(f3, AlignText(40+ (40-len(f3)) , s2+" yes"), AlignText(40, s3))
-
-	//N := 40
+	//s1 := "first line "
+	//s2 := "second line "
+	//s3 := "third line "
 	//
-	//P(f1, Space(N - len(f1))+ s2,s3)
-	//P(f2,Space(N - len(f2))+s2,s3)
-	//P(f3,Space(N - len(f3))+s2 ,s3)
+	//f1 := s1
+	//f2 := s1 + "hello"
+	//f3 := s1 + "hello world"
+	//
+	//
+	//P(AlignText(40, f1, s2+"sad asd asd asd asd", s3+" dene", "asca sacasc"))
+	//P(AlignText(40, f2, s2+"n", s3, "sdvn d"))
+	//P(AlignText(40, f3, s2+" yes", s3, "acc "))
 
-	P(AlignText(40, f1, s2+"sad asd asd asd asd", s3+" dene", "asca sacasc"))
-	P(AlignText(40, f2, s2+"n", s3, "sdvn d"))
-	P(AlignText(40, f3, s2+" yes", s3, "acc "))
+	P(AlignText(20, "LINKUSDT", "$12.5546", "-4.6%"))
+	P(AlignText(20, "ATOMUSDT", "$5.292", "-3.55%"))
+	P(AlignText(20, "LINKTRY", "₺9337", "-4.24%"))
 
 }

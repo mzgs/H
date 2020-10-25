@@ -424,12 +424,17 @@ func AlignText(w int, s ...string) string {
 
 	for i, value := range s {
 		space := w - oldLen
+
 		if i == 0 {
 			space = 0
 		}
 
 		x += Space(space) + value
 		oldLen = len(value)
+
+		if strings.Contains(value, "₺") {
+			oldLen -= 2
+		}
 
 	}
 
