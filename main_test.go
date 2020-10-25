@@ -148,8 +148,8 @@ func TestAlignText(t *testing.T) {
 	//P(f2,Space(N - len(f2))+s2,s3)
 	//P(f3,Space(N - len(f3))+s2 ,s3)
 
-	P(AlignText(40, f1, s2+"sad asd asd asd asd", s3+" dene"))
-	P(AlignText(40, f2, s2+"n", s3))
-	P(AlignText(40, f3, s2+" yes", s3))
+	P(AlignText(40, f1, s2+"sad asd asd asd asd", s3+" dene", "asca sacasc"))
+	P(AlignText(40, f2, s2+"n", s3, "sdvn d"))
+	P(AlignText(40, f3, s2+" yes", s3, "acc "))
 
 }

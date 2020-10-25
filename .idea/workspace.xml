@@ -45,7 +45,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
-  <component name="RunManager" selected="Go Test.TestAlignText in github.com/mzgs/H">
+  <component name="RunManager" selected="Go Test.TestAlignText in github.com/mzgs/H (1)">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="H" />
       <working_directory value="$PROJECT_DIR$" />
@@ -54,6 +54,17 @@
       <filePath value="$PROJECT_DIR$" />
       <package value="H" />
       <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestAlignText in github.com/mzgs/H (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="H" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/mzgs/H" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestAlignText\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TestAlignText in github.com/mzgs/H" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -65,17 +76,6 @@
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <pattern value="^\QTestAlignText\E$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestBetween in github.com/mzgs/H (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="H" />
-      <working_directory value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/mzgs/H" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestBetween\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TestMstr_Between in github.com/mzgs/H" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -124,11 +124,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestAlignText in github.com/mzgs/H (1)" />
         <item itemvalue="Go Test.TestAlignText in github.com/mzgs/H" />
         <item itemvalue="Go Test.TestMstr_Between in github.com/mzgs/H" />
         <item itemvalue="Go Test.TestMstr_Replace in github.com/mzgs/H" />
         <item itemvalue="Go Test.TestMstr_Remove in github.com/mzgs/H" />
-        <item itemvalue="Go Test.TestBetween in github.com/mzgs/H (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -152,16 +152,17 @@
     <MESSAGE value="add lines , index functions" />
     <MESSAGE value="add readfile" />
     <MESSAGE value="add align text" />
-    <option name="LAST_COMMIT_MESSAGE" value="add align text" />
+    <MESSAGE value="add command" />
+    <option name="LAST_COMMIT_MESSAGE" value="add command" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state x="703" y="201" key="CommitChangelistDialog2" timestamp="1603624923391">
+    <state x="703" y="201" key="CommitChangelistDialog2" timestamp="1603626647389">
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
-    <state x="703" y="201" key="CommitChangelistDialog2/0.25.1920.1090@0.25.1920.1090" timestamp="1603624923391" />
+    <state x="703" y="201" key="CommitChangelistDialog2/0.25.1920.1090@0.25.1920.1090" timestamp="1603626647389" />
     <state x="986" y="560" key="Github.ShareDialog" timestamp="1597742144527">
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
@@ -170,30 +171,30 @@
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
     <state x="970" y="384" key="Github.UntrackedFilesDialog/0.25.1920.1090@0.25.1920.1090" timestamp="1597742148829" />
-    <state width="1417" height="294" key="GridCell.Tab.0.bottom" timestamp="1603624833854">
+    <state width="1417" height="294" key="GridCell.Tab.0.bottom" timestamp="1603626723351">
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
-    <state width="1417" height="294" key="GridCell.Tab.0.bottom/0.25.1920.1090@0.25.1920.1090" timestamp="1603624833854" />
-    <state width="1417" height="294" key="GridCell.Tab.0.center" timestamp="1603624833853">
+    <state width="1417" height="294" key="GridCell.Tab.0.bottom/0.25.1920.1090@0.25.1920.1090" timestamp="1603626723351" />
+    <state width="1417" height="294" key="GridCell.Tab.0.center" timestamp="1603626723350">
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
-    <state width="1417" height="294" key="GridCell.Tab.0.center/0.25.1920.1090@0.25.1920.1090" timestamp="1603624833853" />
-    <state width="1417" height="294" key="GridCell.Tab.0.left" timestamp="1603624833852">
+    <state width="1417" height="294" key="GridCell.Tab.0.center/0.25.1920.1090@0.25.1920.1090" timestamp="1603626723350" />
+    <state width="1417" height="294" key="GridCell.Tab.0.left" timestamp="1603626723350">
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
-    <state width="1417" height="294" key="GridCell.Tab.0.left/0.25.1920.1090@0.25.1920.1090" timestamp="1603624833852" />
-    <state width="1417" height="294" key="GridCell.Tab.0.right" timestamp="1603624833853">
+    <state width="1417" height="294" key="GridCell.Tab.0.left/0.25.1920.1090@0.25.1920.1090" timestamp="1603626723350" />
+    <state width="1417" height="294" key="GridCell.Tab.0.right" timestamp="1603626723351">
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
-    <state width="1417" height="294" key="GridCell.Tab.0.right/0.25.1920.1090@0.25.1920.1090" timestamp="1603624833853" />
+    <state width="1417" height="294" key="GridCell.Tab.0.right/0.25.1920.1090@0.25.1920.1090" timestamp="1603626723351" />
     <state x="622" y="206" key="SettingsEditor" timestamp="1602957497163">
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
     <state x="622" y="206" key="SettingsEditor/0.25.1920.1090@0.25.1920.1090" timestamp="1602957497163" />
-    <state x="713" y="388" key="Vcs.Push.Dialog.v2" timestamp="1603624926064">
+    <state x="713" y="388" key="Vcs.Push.Dialog.v2" timestamp="1603626649607">
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
-    <state x="713" y="388" key="Vcs.Push.Dialog.v2/0.25.1920.1090@0.25.1920.1090" timestamp="1603624926064" />
+    <state x="713" y="388" key="Vcs.Push.Dialog.v2/0.25.1920.1090@0.25.1920.1090" timestamp="1603626649607" />
     <state x="913" y="484" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603378316353">
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
