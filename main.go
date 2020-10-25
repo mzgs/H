@@ -472,3 +472,7 @@ func Command(command string) string {
 
 	return string(stdout)
 }
+
+func Test() {
+	P("test")
+}
