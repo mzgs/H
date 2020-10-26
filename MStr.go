@@ -37,7 +37,17 @@ func (m Mstr) Split(sep string) []string {
 }
 
 func (m Mstr) Lines() []string {
-	return m.Split("\n")
+	lines := m.Split("\n")
+
+	var newLines []string
+
+	for _, line := range lines {
+		if line == "" {
+			continue
+		}
+		newLines = append(newLines, line)
+	}
+	return newLines
 }
 
 func (m Mstr) Index(substr string) int {
