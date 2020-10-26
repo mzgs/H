@@ -438,7 +438,7 @@ func AlignText(w int, s ...string) string {
 		x += Space(space) + value
 		oldLen = len(value)
 
-		if strings.Contains(value, "₺") {
+		if strings.Contains(value, "₺") || strings.Contains(value, "₿") {
 			oldLen -= 2
 		}
 
@@ -504,8 +504,4 @@ func FM(format string, a ...interface{}) string {
 	}
 
 	return s.String()
-}
-
-func RemoveIndex(s []string, index int) []string {
-	return append(s[:index], s[index+1:]...)
 }
