@@ -148,3 +148,15 @@ func TestAlignText(t *testing.T) {
 	P(AlignText(20, "LINKTRY", "₺9337", "-4.24%"))
 
 }
+
+func TestFM(t *testing.T) {
+
+	num := 12
+	s := "mustafa"
+	b := true
+
+	fm := FM("num:{num} str:{s} b:{b} {s}", num, s, b, s)
+
+	PL(fm)
+
+}

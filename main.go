@@ -481,3 +481,21 @@ func Command(command string) string {
 func Test() {
 	P("test")
 }
+
+func FM(format string, a ...interface{}) string {
+
+	//x := FM("num:$num str:$s b:$b",num,s,b)
+	//var words []string
+
+	s := Mstr(format)
+
+	r, _ := regexp.Compile("{([^}]*)}")
+
+	allString := r.FindAllString(format, -1)
+
+	for i, value := range allString {
+		s.Replace(value, Str(a[i]))
+	}
+
+	return s.String()
+}
