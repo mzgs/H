@@ -67,7 +67,7 @@ func F(s string) float64 {
 }
 
 func FtoStr(f float64) string {
-	return fmt.Sprintf("%v", f)
+	return fmt.Sprintf("%f", f)
 
 }
 

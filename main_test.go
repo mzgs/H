@@ -160,3 +160,8 @@ func TestFM(t *testing.T) {
 	PL(fm)
 
 }
+
+func TestFtoStr(t *testing.T) {
+
+	PL(FtoStr(3243432423423.234323434))
+}
