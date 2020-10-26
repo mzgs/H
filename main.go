@@ -416,6 +416,12 @@ func ReadFile(path string) string {
 	return string(r)
 }
 
+func WriteFile(path, text string) error {
+
+	return ioutil.WriteFile(path, []byte(text), 0644)
+
+}
+
 func AlignText(w int, s ...string) string {
 	//return fmt.Sprintf(fmt.Sprintf("%%%ds", w),s)
 
