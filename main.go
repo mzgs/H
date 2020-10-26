@@ -425,6 +425,8 @@ func WriteFile(path, text string) error {
 func AlignText(w int, s ...string) string {
 	//return fmt.Sprintf(fmt.Sprintf("%%%ds", w),s)
 
+	specialChars := []string{"₺", "₿"}
+
 	var x string
 	var oldLen int
 
@@ -438,8 +440,10 @@ func AlignText(w int, s ...string) string {
 		x += Space(space) + value
 		oldLen = len(value)
 
-		if strings.Contains(value, "₺") || strings.Contains(value, "₿") {
-			oldLen -= 2
+		for _, char := range specialChars {
+			if strings.Contains(value, char) {
+				oldLen -= 2
+			}
 		}
 
 	}
