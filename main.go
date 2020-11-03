@@ -509,3 +509,21 @@ func FM(format string, a ...interface{}) string {
 
 	return s.String()
 }
+
+func TitleTurkish(s string) string {
+	s = strings.ToLowerSpecial(unicode.TurkishCase, s)
+
+	var arr []string
+
+	for _, value := range strings.Split(s, " ") {
+		if len(value) == 0 {
+			continue
+		}
+
+		arr = append(arr, strings.ToUpperSpecial(unicode.TurkishCase, string([]rune(value)[0]))+string([]rune(value)[1:]))
+
+	}
+
+	return strings.Join(arr, " ")
+
+}

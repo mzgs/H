@@ -1,7 +1,6 @@
 package H
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -167,15 +166,6 @@ func TestFtoStr(t *testing.T) {
 	PL(FtoStr(3243432423423.234323434))
 }
 
-func TestRemoveIndex(t *testing.T) {
-
-	var strSlice = []string{"India", "Canada", "Japan", "Germany", "Italy"}
-	fmt.Println(strSlice)
-
-	strSlice = RemoveIndex(strSlice, 3)
-	fmt.Println(strSlice)
-}
-
 func TestMstr_Lines(t *testing.T) {
 
 	a := Mstr(ReadFile("/Users/mustafa/Documents/BitbarPlugins/data/ticker.txt"))
@@ -183,5 +173,16 @@ func TestMstr_Lines(t *testing.T) {
 	for _, value := range a.Lines() {
 		P("-" + value + "-")
 	}
+
+}
+
+func TestTitleTurkish(t *testing.T) {
+
+	s := "Ahirette insan ölümsüzdür Ilık İlk"
+	P("Original: ", s)
+
+	//PL(strings.ToUpperSpecial(unicode.TurkishCase,"ı ç ğ ö i"))
+
+	PL(TitleTurkish(s))
 
 }
