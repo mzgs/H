@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="063218a8-9ff3-41d1-8a08-86bba8cd2aa0" name="Default Changelist" comment="" />
+    <list default="true" id="063218a8-9ff3-41d1-8a08-86bba8cd2aa0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,7 +45,12 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
-  <component name="RunManager" selected="Go Test.TestTitleTurkish in github.com/mzgs/H">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/bolt" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Go Test.TestReverseAny in github.com/mzgs/H">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="H" />
       <working_directory value="$PROJECT_DIR$" />
@@ -51,17 +59,6 @@
       <filePath value="$PROJECT_DIR$" />
       <package value="H" />
       <directory value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestFM in github.com/mzgs/H" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="H" />
-      <working_directory value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/mzgs/H" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestFM\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TestFtoStr in github.com/mzgs/H" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -97,6 +94,17 @@
       <pattern value="^\QTestRemoveIndex\E$" />
       <method v="2" />
     </configuration>
+    <configuration name="TestReverseAny in github.com/mzgs/H" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="H" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/mzgs/H" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestReverseAny\E$" />
+      <method v="2" />
+    </configuration>
     <configuration name="TestTitleTurkish in github.com/mzgs/H" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="H" />
       <working_directory value="$PROJECT_DIR$" />
@@ -121,11 +129,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestReverseAny in github.com/mzgs/H" />
         <item itemvalue="Go Test.TestTitleTurkish in github.com/mzgs/H" />
         <item itemvalue="Go Test.TestMstr_Lines in github.com/mzgs/H" />
         <item itemvalue="Go Test.TestRemoveIndex in github.com/mzgs/H" />
         <item itemvalue="Go Test.TestFtoStr in github.com/mzgs/H" />
-        <item itemvalue="Go Test.TestFM in github.com/mzgs/H" />
       </list>
     </recent_temporary>
   </component>
@@ -157,17 +165,18 @@
     <MESSAGE value="fix new line" />
     <MESSAGE value="fix special chars" />
     <MESSAGE value="add bolt helper" />
-    <option name="LAST_COMMIT_MESSAGE" value="add bolt helper" />
+    <MESSAGE value="change bolt folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="change bolt folder" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state x="1288" y="369" key="CommitChangelistDialog2" timestamp="1604742331216">
+    <state x="1288" y="369" key="CommitChangelistDialog2" timestamp="1604742533886">
       <screen x="0" y="25" width="3840" height="2050" />
     </state>
     <state x="644" y="208" key="CommitChangelistDialog2/0.25.1920.1090@0.25.1920.1090" timestamp="1603753581150" />
-    <state x="1288" y="369" key="CommitChangelistDialog2/0.25.3840.2050@0.25.3840.2050" timestamp="1604742331216" />
+    <state x="1288" y="369" key="CommitChangelistDialog2/0.25.3840.2050@0.25.3840.2050" timestamp="1604742533886" />
     <state x="986" y="560" key="Github.ShareDialog" timestamp="1597742144527">
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
@@ -200,11 +209,11 @@
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
     <state x="622" y="206" key="SettingsEditor/0.25.1920.1090@0.25.1920.1090" timestamp="1602957497163" />
-    <state x="1426" y="708" key="Vcs.Push.Dialog.v2" timestamp="1604742332730">
+    <state x="1426" y="708" key="Vcs.Push.Dialog.v2" timestamp="1604742534998">
       <screen x="0" y="25" width="3840" height="2050" />
     </state>
     <state x="713" y="388" key="Vcs.Push.Dialog.v2/0.25.1920.1090@0.25.1920.1090" timestamp="1603750629996" />
-    <state x="1426" y="708" key="Vcs.Push.Dialog.v2/0.25.3840.2050@0.25.3840.2050" timestamp="1604742332730" />
+    <state x="1426" y="708" key="Vcs.Push.Dialog.v2/0.25.3840.2050@0.25.3840.2050" timestamp="1604742534998" />
     <state x="913" y="484" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603378316353">
       <screen x="0" y="25" width="1920" height="1090" />
     </state>

@@ -186,3 +186,14 @@ func TestTitleTurkish(t *testing.T) {
 	PL(TitleTurkish(s))
 
 }
+
+func TestReverseAny(t *testing.T) {
+
+	a := []int{1, 2, 3, 4}
+	P(a)
+
+	ReverseAny(a)
+
+	P(a)
+
+}
