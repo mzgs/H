@@ -197,3 +197,79 @@ func TestReverseAny(t *testing.T) {
 	P(a)
 
 }
+
+func TestGetRequest(t *testing.T) {
+
+	b, err := GetRequest("https://postb.in/1604876410544-8237676401622", "X-Status", "mustafa")
+	if err != nil {
+		P(err)
+	}
+
+	P(string(b))
+
+}
+
+func TestParseJsonFromUrl(t *testing.T) {
+
+	var posts []Post
+	err := ParseJsonFromUrl("https://jsonplaceholder.typicode.com/posts", "", &posts)
+	if err != nil {
+		P(err)
+	}
+
+	var symbols []Symbol
+	err = ParseJsonFromUrl("https://api.btcturk.com/api/v2/ticker", "data", &symbols)
+	if err != nil {
+		P(err)
+	}
+
+	var markets []BitexenMarket
+	err = ParseJsonFromUrl("https://www.bitexen.com/api/v1/market_info/", "data.markets", &markets)
+	if err != nil {
+		P(err)
+	}
+
+	for _, value := range markets {
+		P(value.MarketCode, value.PresentationDecimal)
+	}
+
+}
+
+type Post struct {
+	UserID int    `json:"userId"`
+	ID     int    `json:"id"`
+	Title  string `json:"title"`
+	Body   string `json:"body"`
+}
+
+type Symbol struct {
+	Pair              string  `json:"pair"`
+	PairNormalized    string  `json:"pairNormalized"`
+	Timestamp         int64   `json:"timestamp"`
+	Last              float64 `json:"last"`
+	High              float64 `json:"high"`
+	Low               float64 `json:"low"`
+	Bid               float64 `json:"bid"`
+	Ask               float64 `json:"ask"`
+	Open              float64 `json:"open"`
+	Volume            float64 `json:"volume"`
+	Average           float64 `json:"average"`
+	Daily             float64 `json:"daily"`
+	DailyPercent      float64 `json:"dailyPercent"`
+	DenominatorSymbol string  `json:"denominatorSymbol"`
+	NumeratorSymbol   string  `json:"numeratorSymbol"`
+	Order             int     `json:"order"`
+}
+
+type BitexenMarket struct {
+	MarketCode             string `json:"market_code"`
+	URLSymbol              string `json:"url_symbol"`
+	BaseCurrency           string `json:"base_currency"`
+	CounterCurrency        string `json:"counter_currency"`
+	MinimumOrderAmount     string `json:"minimum_order_amount"`
+	MaximumOrderAmount     string `json:"maximum_order_amount"`
+	BaseCurrencyDecimal    int    `json:"base_currency_decimal"`
+	CounterCurrencyDecimal int    `json:"counter_currency_decimal"`
+	PresentationDecimal    int    `json:"presentation_decimal"`
+	ResellMarket           bool   `json:"resell_market"`
+}

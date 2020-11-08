@@ -250,16 +250,22 @@ func Encrypt(s string) (string, error) {
 	return base64Str, err
 }
 
-func GetRequest(url string) ([]byte, error) {
-	response, err := http.Get(url)
+func GetRequest(url string, headers ...string) ([]byte, error) {
+
+	client := &http.Client{}
+	req, _ := http.NewRequest("GET", url, nil)
+
+	for i := 0; i < len(headers)-1; i++ {
+		req.Header.Set(headers[i], headers[i+1])
+	}
+
+	res, err := client.Do(req)
 	if err != nil {
 		return nil, err
 	}
 
-	defer response.Body.Close()
-	contents, _ := ioutil.ReadAll(response.Body)
-
-	return contents, nil
+	body, err := ioutil.ReadAll(res.Body)
+	return body, err
 }
 
 // Tif is a simple implementation of the dear ternary IF operator
@@ -535,4 +541,33 @@ func ReverseAny(s interface{}) {
 	for i, j := 0, n-1; i < j; i, j = i+1, j-1 {
 		swap(i, j)
 	}
+}
+
+func ParseJsonFromUrl(url, path string, i interface{}, headers ...string) error {
+
+	bytedata, err := GetRequest(url, headers...)
+	if err != nil {
+		return err
+	}
+
+	paths := strings.Split(path, ".")
+
+	get := jsoniter.Get(bytedata, paths[0])
+
+	if path != "" {
+		bytedata = []byte(get.ToString())
+	}
+
+	if len(paths) > 1 {
+
+		for i := 1; i < len(paths); i++ {
+
+			get = get.Get(paths[i])
+		}
+
+		bytedata = []byte(get.ToString())
+	}
+
+	return jsoniter.Unmarshal(bytedata, i)
+
 }
