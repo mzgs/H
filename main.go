@@ -16,6 +16,7 @@ import (
 	"log"
 	"math"
 	"net/http"
+	"net/url"
 	"os"
 	"os/exec"
 	"reflect"
@@ -250,24 +251,6 @@ func Encrypt(s string) (string, error) {
 	return base64Str, err
 }
 
-func GetRequest(url string, headers ...string) ([]byte, error) {
-
-	client := &http.Client{}
-	req, _ := http.NewRequest("GET", url, nil)
-
-	for i := 0; i < len(headers)-1; i++ {
-		req.Header.Set(headers[i], headers[i+1])
-	}
-
-	res, err := client.Do(req)
-	if err != nil {
-		return nil, err
-	}
-
-	body, err := ioutil.ReadAll(res.Body)
-	return body, err
-}
-
 // Tif is a simple implementation of the dear ternary IF operator
 func Tif(condition bool, tifThen, tifElse interface{}) interface{} {
 	if condition {
@@ -356,26 +339,6 @@ func CleanIndexText(text string) string {
 	text = reg.ReplaceAllString(text, "")
 
 	return text
-}
-
-func ArrayFromUrl(url, path string, arr interface{}) error {
-
-	bytedata, _ := GetRequest(url)
-
-	paths := strings.Split(path, ".")
-	get := jsoniter.Get(bytedata, paths[0])
-
-	if len(paths) > 1 {
-
-		for i := 1; i < len(paths); i++ {
-
-			get = get.Get(paths[i])
-		}
-
-	}
-
-	return jsoniter.Unmarshal([]byte(get.ToString()), arr)
-
 }
 
 func DownloadFile(url, filepath string) error {
@@ -543,11 +506,66 @@ func ReverseAny(s interface{}) {
 	}
 }
 
-func ParseJsonFromUrl(url, path string, i interface{}, headers ...string) error {
+func GetRequest(url string, headers ...string) ([]byte, error) {
 
-	bytedata, err := GetRequest(url, headers...)
+	client := &http.Client{}
+	req, _ := http.NewRequest("GET", url, nil)
+
+	for i := 0; i < len(headers)-1; i++ {
+		req.Header.Set(headers[i], headers[i+1])
+	}
+
+	res, err := client.Do(req)
 	if err != nil {
-		return err
+		return nil, err
+	}
+
+	body, err := ioutil.ReadAll(res.Body)
+	return body, err
+}
+
+func PostRequest(postUrl string, postData map[string]string, headers ...string) ([]byte, error) {
+
+	params := url.Values{}
+	for key, value := range postData {
+		params.Set(key, value)
+	}
+
+	pData := strings.NewReader(params.Encode())
+
+	client := &http.Client{}
+	req, _ := http.NewRequest("POST", postUrl, pData)
+
+	for i := 0; i < len(headers)-1; i++ {
+		req.Header.Set(headers[i], headers[i+1])
+	}
+
+	res, err := client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+
+	body, err := ioutil.ReadAll(res.Body)
+	return body, err
+}
+
+func parseJsonFromUrl(method, url, path string, i interface{}, postData map[string]string, headers ...string) error {
+
+	var bytedata []byte
+
+	if method == "GET" {
+		d, err := GetRequest(url, headers...)
+		if err != nil {
+			return err
+		}
+		bytedata = d
+	}
+	if method == "POST" {
+		d, err := PostRequest(url, postData, headers...)
+		if err != nil {
+			return err
+		}
+		bytedata = d
 	}
 
 	paths := strings.Split(path, ".")
@@ -569,5 +587,15 @@ func ParseJsonFromUrl(url, path string, i interface{}, headers ...string) error 
 	}
 
 	return jsoniter.Unmarshal(bytedata, i)
+
+}
+func ParseJsonFromUrlGET(url, path string, i interface{}, headers ...string) error {
+
+	return parseJsonFromUrl("GET", url, path, i, nil, headers...)
+
+}
+
+func ParseJsonFromUrlPOST(url, path string, i interface{}, postData map[string]string, headers ...string) error {
+	return parseJsonFromUrl("GET", url, path, i, postData, headers...)
 
 }
