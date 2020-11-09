@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="063218a8-9ff3-41d1-8a08-86bba8cd2aa0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,7 +17,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" path="/usr/local/Cellar/go/1.15.3/libexec" />
+  <component name="GOROOT" path="/usr/local/Cellar/go/1.14.4/libexec" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -179,6 +180,10 @@
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
+    <state x="645" y="500" key="#GOROOT" timestamp="1604938082952">
+      <screen x="0" y="25" width="1920" height="1090" />
+    </state>
+    <state x="645" y="500" key="#GOROOT/0.25.1920.1090@0.25.1920.1090" timestamp="1604938082952" />
     <state x="1288" y="369" key="CommitChangelistDialog2" timestamp="1604913086900">
       <screen x="0" y="25" width="3840" height="2050" />
     </state>
