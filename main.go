@@ -601,3 +601,13 @@ func ParseJsonFromUrlPOST(url, path string, i interface{}, postData map[string]s
 	return parseJsonFromUrl("GET", url, path, i, postData, headers...)
 
 }
+
+func FileExist(path string) bool {
+	if _, err := os.Stat(path); err == nil {
+		// path/to/whatever exists
+		return true
+
+	}
+
+	return false
+}
