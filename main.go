@@ -627,3 +627,14 @@ func CopyFile(src, dst string) (int64, error) {
 	return nBytes, err
 
 }
+
+func FileExist(path string) bool {
+	if _, err := os.Stat(path); err == nil {
+		// path/to/whatever exists
+		return true
+
+	}
+
+	return false
+
+}
