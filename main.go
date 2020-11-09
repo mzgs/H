@@ -540,6 +540,8 @@ func PostRequest(postUrl string, postData map[string]string, headers ...string) 
 		req.Header.Set(headers[i], headers[i+1])
 	}
 
+	req.Header.Add("Content-Type", "application/x-www-form-urlencoded")
+
 	res, err := client.Do(req)
 	if err != nil {
 		return nil, err
