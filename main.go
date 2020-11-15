@@ -442,6 +442,10 @@ func IsMacos() bool {
 	return runtime.GOOS == "darwin"
 }
 
+func IsLinux() bool {
+	return runtime.GOOS == "linux"
+}
+
 func Command(command string) string {
 
 	var cmd *exec.Cmd
@@ -449,8 +453,10 @@ func Command(command string) string {
 	if IsWindows() {
 		cmd = exec.Command("cmd", "/C", command)
 
-	} else {
+	} else if IsMacos() {
 		cmd = exec.Command("/bin/zsh", "-c", command)
+	} else {
+		cmd = exec.Command("/bin/bash", "-c", command)
 	}
 
 	stdout, _ := cmd.CombinedOutput()

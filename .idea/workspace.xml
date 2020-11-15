@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="063218a8-9ff3-41d1-8a08-86bba8cd2aa0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -148,7 +149,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="remove form helper" />
     <MESSAGE value="add some funcs" />
     <MESSAGE value="add removefromstrings" />
     <MESSAGE value="add printinline" />
@@ -173,7 +173,8 @@
     <MESSAGE value="add parsejson from url" />
     <MESSAGE value="add get and post methods" />
     <MESSAGE value="add get and post methodsas" />
-    <option name="LAST_COMMIT_MESSAGE" value="add get and post methodsas" />
+    <MESSAGE value="add file exist" />
+    <option name="LAST_COMMIT_MESSAGE" value="add file exist" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -184,11 +185,11 @@
     </state>
     <state x="645" y="500" key="#GOROOT/0.25.1920.1090@0.25.1920.1090" timestamp="1604938082952" />
     <state x="1290" y="918" key="#GOROOT/0.25.3840.2050@0.25.3840.2050" timestamp="1604956312748" />
-    <state x="1288" y="369" key="CommitChangelistDialog2" timestamp="1604956328072">
+    <state x="1288" y="369" key="CommitChangelistDialog2" timestamp="1604956366656">
       <screen x="0" y="25" width="3840" height="2050" />
     </state>
     <state x="644" y="208" key="CommitChangelistDialog2/0.25.1920.1090@0.25.1920.1090" timestamp="1603753581150" />
-    <state x="1288" y="369" key="CommitChangelistDialog2/0.25.3840.2050@0.25.3840.2050" timestamp="1604956328072" />
+    <state x="1288" y="369" key="CommitChangelistDialog2/0.25.3840.2050@0.25.3840.2050" timestamp="1604956366656" />
     <state x="986" y="560" key="Github.ShareDialog" timestamp="1597742144527">
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
@@ -221,11 +222,11 @@
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
     <state x="622" y="206" key="SettingsEditor/0.25.1920.1090@0.25.1920.1090" timestamp="1602957497163" />
-    <state x="1426" y="708" key="Vcs.Push.Dialog.v2" timestamp="1604956329336">
+    <state x="1426" y="708" key="Vcs.Push.Dialog.v2" timestamp="1604956392948">
       <screen x="0" y="25" width="3840" height="2050" />
     </state>
     <state x="713" y="388" key="Vcs.Push.Dialog.v2/0.25.1920.1090@0.25.1920.1090" timestamp="1603750629996" />
-    <state x="1426" y="708" key="Vcs.Push.Dialog.v2/0.25.3840.2050@0.25.3840.2050" timestamp="1604956329336" />
+    <state x="1426" y="708" key="Vcs.Push.Dialog.v2/0.25.3840.2050@0.25.3840.2050" timestamp="1604956392948" />
     <state x="913" y="484" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603378316353">
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
