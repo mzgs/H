@@ -14,7 +14,7 @@ func TestArrayFromUrl(t *testing.T) {
 
 	var m []BtcturkSymbol
 
-	err := ArrayFromUrl("https://api.btcturk.com/api/v2/ticker", "data", &m)
+	err := ParseJsonFromUrlGET("https://api.btcturk.com/api/v2/ticker", "data", &m)
 
 	if err != nil {
 		t.Error(err)
@@ -212,19 +212,19 @@ func TestGetRequest(t *testing.T) {
 func TestParseJsonFromUrl(t *testing.T) {
 
 	var posts []Post
-	err := ParseJsonFromUrl("https://jsonplaceholder.typicode.com/posts", "", &posts)
+	err := ParseJsonFromUrlGET("https://jsonplaceholder.typicode.com/posts", "", &posts)
 	if err != nil {
 		P(err)
 	}
 
 	var symbols []Symbol
-	err = ParseJsonFromUrl("https://api.btcturk.com/api/v2/ticker", "data", &symbols)
+	err = ParseJsonFromUrlGET("https://api.btcturk.com/api/v2/ticker", "data", &symbols)
 	if err != nil {
 		P(err)
 	}
 
 	var markets []BitexenMarket
-	err = ParseJsonFromUrl("https://www.bitexen.com/api/v1/market_info/", "data.markets", &markets)
+	err = ParseJsonFromUrlGET("https://www.bitexen.com/api/v1/market_info/", "data.markets", &markets)
 	if err != nil {
 		P(err)
 	}
@@ -232,6 +232,16 @@ func TestParseJsonFromUrl(t *testing.T) {
 	for _, value := range markets {
 		P(value.MarketCode, value.PresentationDecimal)
 	}
+
+}
+
+func TestMstr_FixMultiSpace(t *testing.T) {
+	s := Mstr("Bize Mahled b. Mâlik haber verip (dedi ki)         bize Yahya b. Sa'îd rivâyet edip (dedi ki) bize İbn Cureyc rivâyet edip         dedi ki; bana Abdulmelik b. Abdillah b. Ebî Süfyân es -Sakafî, İbn         Ömer'den haber verdi ki, o şöyle demiş: Bu ilmi yazıyla kaydediniz.")
+
+	PBL(s)
+
+	s.FixMultiSpace()
+	PBL(s)
 
 }
 

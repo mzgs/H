@@ -69,3 +69,9 @@ func (m *Mstr) String() string {
 func (m Mstr) Print() {
 	P(m)
 }
+
+func (m *Mstr) FixMultiSpace() {
+
+	r := StringReplaceAll(m.String(), "  ", " ")
+	m.Set(r)
+}
