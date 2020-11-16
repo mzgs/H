@@ -304,7 +304,7 @@ func PL(i ...interface{}) {
 	Line()
 }
 
-func BL(i ...interface{}) {
+func PBL(i ...interface{}) {
 
 	P(i...)
 	Line()
