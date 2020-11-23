@@ -644,3 +644,7 @@ func FileExist(path string) bool {
 	return false
 
 }
+
+func NewFolder(path string) error {
+	return os.MkdirAll(path, os.ModePerm)
+}
