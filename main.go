@@ -15,6 +15,7 @@ import (
 	"io/ioutil"
 	"log"
 	"math"
+	mrand "math/rand"
 	"net/http"
 	"net/url"
 	"os"
@@ -655,4 +656,20 @@ func FileExist(path string) bool {
 
 func NewFolder(path string) error {
 	return os.MkdirAll(path, os.ModePerm)
+}
+
+func RandomSeed() {
+	mrand.Seed(time.Now().UTC().UnixNano())
+}
+
+func RandomInt(min int, max int) int {
+	return min + mrand.Intn(max-min)
+}
+
+func RandomString(l int) string {
+	bytes := make([]byte, l)
+	for i := 0; i < l; i++ {
+		bytes[i] = byte(RandomInt(65, 90))
+	}
+	return string(bytes)
 }
