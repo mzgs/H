@@ -323,6 +323,7 @@ func RemoveFromString(original string, removePairs ...string) string {
 }
 
 func UrlString(s string) string {
+	s = StringReplaceAll(s, "-", " ")
 	return StringReplaceAll(CleanIndexText(s), " ", "-")
 }
 
