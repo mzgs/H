@@ -19,6 +19,7 @@ import (
 	"net/url"
 	"os"
 	"os/exec"
+	"path/filepath"
 	"reflect"
 	"regexp"
 	"runtime"
@@ -322,6 +323,13 @@ func RemoveFromString(original string, removePairs ...string) string {
 
 func UrlString(s string) string {
 	return StringReplaceAll(CleanIndexText(s), " ", "-")
+}
+
+func UrlStringForFile(s string) string {
+	ext := filepath.Ext(s)
+	filename := RemoveFromString(s, ext)
+	filename = UrlString(filename) + ext
+	return filename
 }
 
 func CleanIndexText(text string) string {

@@ -283,3 +283,27 @@ type BitexenMarket struct {
 	PresentationDecimal    int    `json:"presentation_decimal"`
 	ResellMarket           bool   `json:"resell_market"`
 }
+
+func TestUrlStringForFile(t *testing.T) {
+	type args struct {
+		s string
+	}
+	tests := []struct {
+		name string
+		args args
+		want string
+	}{
+		{
+			name: "Test jpeg image file",
+			args: args{"türkÇe RESİM Ğiş ŞQ I Ç.jpg"},
+			want: "turkce-resim-gis-sq-i-c.jpg",
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := UrlStringForFile(tt.args.s); got != tt.want {
+				t.Errorf("UrlStringForFile() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

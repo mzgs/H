@@ -4,6 +4,7 @@
     <list default="true" id="063218a8-9ff3-41d1-8a08-86bba8cd2aa0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/main_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +58,7 @@
       <recent name="$PROJECT_DIR$/bolt" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestMstr_FixMultiSpace in github.com/mzgs/H">
+  <component name="RunManager" selected="Go Test.TestUrlStringForFile in github.com/mzgs/H">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="H" />
       <working_directory value="$PROJECT_DIR$" />
@@ -112,7 +113,7 @@
       <pattern value="^\QTestReverseAny\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestTitleTurkish in github.com/mzgs/H" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestUrlStringForFile in github.com/mzgs/H" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="H" />
       <working_directory value="$PROJECT_DIR$" />
       <framework value="gotest" />
@@ -120,7 +121,7 @@
       <package value="github.com/mzgs/H" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestTitleTurkish\E$" />
+      <pattern value="^\QTestUrlStringForFile\E$" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
@@ -136,11 +137,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestUrlStringForFile in github.com/mzgs/H" />
         <item itemvalue="Go Test.TestMstr_FixMultiSpace in github.com/mzgs/H" />
         <item itemvalue="Go Test.TestParseJsonFromUrl in github.com/mzgs/H" />
         <item itemvalue="Go Test.TestGetRequest in github.com/mzgs/H" />
         <item itemvalue="Go Test.TestReverseAny in github.com/mzgs/H" />
-        <item itemvalue="Go Test.TestTitleTurkish in github.com/mzgs/H" />
       </list>
     </recent_temporary>
   </component>
@@ -185,19 +186,15 @@
     </state>
     <state x="645" y="500" key="#GOROOT/0.25.1920.1090@0.25.1920.1090" timestamp="1604938082952" />
     <state x="1290" y="918" key="#GOROOT/0.25.3840.2050@0.25.3840.2050" timestamp="1604956312748" />
+    <state x="1093" y="912" width="1071" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608383815734">
+      <screen x="0" y="25" width="3840" height="2050" />
+    </state>
+    <state x="1093" y="912" width="1071" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.3840.2050@0.25.3840.2050" timestamp="1608383815734" />
     <state x="1288" y="369" key="CommitChangelistDialog2" timestamp="1605518578082">
       <screen x="0" y="25" width="3840" height="2050" />
     </state>
     <state x="644" y="208" key="CommitChangelistDialog2/0.25.1920.1090@0.25.1920.1090" timestamp="1603753581150" />
     <state x="1288" y="369" key="CommitChangelistDialog2/0.25.3840.2050@0.25.3840.2050" timestamp="1605518578082" />
-    <state x="986" y="560" key="Github.ShareDialog" timestamp="1597742144527">
-      <screen x="0" y="25" width="1920" height="1090" />
-    </state>
-    <state x="986" y="560" key="Github.ShareDialog/0.25.1920.1090@0.25.1920.1090" timestamp="1597742144527" />
-    <state x="970" y="384" key="Github.UntrackedFilesDialog" timestamp="1597742148829">
-      <screen x="0" y="25" width="1920" height="1090" />
-    </state>
-    <state x="970" y="384" key="Github.UntrackedFilesDialog/0.25.1920.1090@0.25.1920.1090" timestamp="1597742148829" />
     <state width="1536" height="282" key="GridCell.Tab.0.bottom" timestamp="1605518585117">
       <screen x="0" y="25" width="3840" height="2050" />
     </state>
