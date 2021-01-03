@@ -674,3 +674,9 @@ func RandomString(l int) string {
 	}
 	return string(bytes)
 }
+
+func Svg(path string, size int, stroke float64) string {
+	return FM(`<svg id="i-desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="{size}" height="{size}" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="{stroke}">
+    <path d="{path}" />
+</svg>`, size, size, stroke, path)
+}

@@ -33,6 +33,7 @@
   </component>
   <component name="ProjectId" id="1gGXkfh3UFMLNVlvDIW1AIVMpwS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -149,7 +150,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add some functions" />
     <MESSAGE value="add betweentext" />
     <MESSAGE value="add error" />
     <MESSAGE value="add BL" />
@@ -174,7 +174,8 @@
     <MESSAGE value="fix command" />
     <MESSAGE value="add fix multi space" />
     <MESSAGE value="add random funcs" />
-    <option name="LAST_COMMIT_MESSAGE" value="add random funcs" />
+    <MESSAGE value="fix url string" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix url string" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -189,11 +190,11 @@
       <screen x="0" y="25" width="3840" height="2050" />
     </state>
     <state x="1093" y="912" width="1071" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.3840.2050@0.25.3840.2050" timestamp="1608383815734" />
-    <state x="1288" y="369" key="CommitChangelistDialog2" timestamp="1608384832561">
+    <state x="1288" y="369" key="CommitChangelistDialog2" timestamp="1608387926822">
       <screen x="0" y="25" width="3840" height="2050" />
     </state>
     <state x="644" y="208" key="CommitChangelistDialog2/0.25.1920.1090@0.25.1920.1090" timestamp="1603753581150" />
-    <state x="1288" y="369" key="CommitChangelistDialog2/0.25.3840.2050@0.25.3840.2050" timestamp="1608384832561" />
+    <state x="1288" y="369" key="CommitChangelistDialog2/0.25.3840.2050@0.25.3840.2050" timestamp="1608387926822" />
     <state width="1536" height="282" key="GridCell.Tab.0.bottom" timestamp="1608384849570">
       <screen x="0" y="25" width="3840" height="2050" />
     </state>
@@ -218,15 +219,16 @@
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
     <state x="622" y="206" key="SettingsEditor/0.25.1920.1090@0.25.1920.1090" timestamp="1602957497163" />
-    <state x="1426" y="708" key="Vcs.Push.Dialog.v2" timestamp="1608384833947">
+    <state x="1426" y="708" key="Vcs.Push.Dialog.v2" timestamp="1608387928317">
       <screen x="0" y="25" width="3840" height="2050" />
     </state>
     <state x="713" y="388" key="Vcs.Push.Dialog.v2/0.25.1920.1090@0.25.1920.1090" timestamp="1603750629996" />
-    <state x="1426" y="708" key="Vcs.Push.Dialog.v2/0.25.3840.2050@0.25.3840.2050" timestamp="1608384833947" />
-    <state x="913" y="484" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603378316353">
-      <screen x="0" y="25" width="1920" height="1090" />
+    <state x="1426" y="708" key="Vcs.Push.Dialog.v2/0.25.3840.2050@0.25.3840.2050" timestamp="1608387928317" />
+    <state x="1826" y="888" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609667417754">
+      <screen x="0" y="25" width="3840" height="2050" />
     </state>
     <state x="913" y="484" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.1920.1090@0.25.1920.1090" timestamp="1603378316353" />
+    <state x="1826" y="888" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.3840.2050@0.25.3840.2050" timestamp="1609667417754" />
     <state x="934" y="339" key="refactoring.ChangeSignatureDialog" timestamp="1603530890049">
       <screen x="0" y="25" width="1920" height="1090" />
     </state>
