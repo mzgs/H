@@ -58,7 +58,7 @@ func Get(bucket []byte, key []byte) []byte {
 	})
 
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 
 	return value
