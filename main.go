@@ -614,7 +614,7 @@ func ParseJsonFromUrlGET(url, path string, i interface{}, headers ...string) err
 }
 
 func ParseJsonFromUrlPOST(url, path string, i interface{}, postData map[string]string, headers ...string) error {
-	return parseJsonFromUrl("GET", url, path, i, postData, headers...)
+	return parseJsonFromUrl("POST", url, path, i, postData, headers...)
 
 }
 
