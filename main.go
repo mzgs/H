@@ -680,3 +680,47 @@ func Svg(path string, size int, stroke float64) string {
     <path d="{path}" />
 </svg>`, size, size, stroke, path)
 }
+
+func TurkishDate(date int64) string {
+
+	theTime := H.ParseUnix(date).Format("02 January 2006 15:04")
+	month := strings.Split(theTime, " ")
+	switch month[1] {
+	case "January":
+		str := strings.Replace(theTime, "January", "Ocak", -1)
+		return str
+	case "February":
+		str := strings.Replace(theTime, "February", "Şubat", -1)
+		return str
+	case "March":
+		str := strings.Replace(theTime, "March", "Mart", -1)
+		return str
+	case "April":
+		str := strings.Replace(theTime, "April", "Nisan", -1)
+		return str
+	case "May":
+		str := strings.Replace(theTime, "May", "Mayıs", -1)
+		return str
+	case "June":
+		str := strings.Replace(theTime, "June", "Haziran", -1)
+		return str
+	case "August":
+		str := strings.Replace(theTime, "August", "Ağustos", -1)
+		return str
+	case "September":
+		str := strings.Replace(theTime, "September", "Eylül", -1)
+		return str
+	case "October":
+		str := strings.Replace(theTime, "October", "Ekim", -1)
+		return str
+	case "November":
+		str := strings.Replace(theTime, "November", "Kasım", -1)
+		return str
+	case "December":
+		str := strings.Replace(theTime, "December", "Aralık", -1)
+		return str
+	default:
+		return "Date Parse Error"
+	}
+}
+
