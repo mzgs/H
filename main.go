@@ -683,7 +683,7 @@ func Svg(path string, size int, stroke float64) string {
 
 func TurkishDate(date int64) string {
 
-	theTime := H.ParseUnix(date).Format("02 January 2006 15:04")
+	theTime := ParseUnix(date).Format("02 January 2006 15:04")
 	month := strings.Split(theTime, " ")
 	switch month[1] {
 	case "January":
