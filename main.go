@@ -725,7 +725,7 @@ func TurkishDate(date int64) string {
 }
 
 func  GetLines(s string) []string {
-	lines := strings.Split("\n")
+	lines := strings.Split(s,"\n")
 
 	var newLines []string
 
