@@ -724,3 +724,17 @@ func TurkishDate(date int64) string {
 	}
 }
 
+func  GetLines(s string) []string {
+	lines := strings.Split("\n")
+
+	var newLines []string
+
+	for _, line := range lines {
+		if line == "" {
+			continue
+		}
+		newLines = append(newLines, line)
+	}
+	return newLines
+}
+
