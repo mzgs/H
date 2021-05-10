@@ -7,10 +7,6 @@ import (
 	"encoding/base64"
 	"errors"
 	"fmt"
-	jsoniter "github.com/json-iterator/go"
-	"golang.org/x/text/runes"
-	"golang.org/x/text/transform"
-	"golang.org/x/text/unicode/norm"
 	"io"
 	"io/ioutil"
 	"log"
@@ -28,11 +24,18 @@ import (
 	"strings"
 	"time"
 	"unicode"
+
+	jsoniter "github.com/json-iterator/go"
+	"golang.org/x/crypto/bcrypt"
+	"golang.org/x/text/runes"
+	"golang.org/x/text/transform"
+	"golang.org/x/text/unicode/norm"
 )
-import "golang.org/x/crypto/bcrypt"
 
 var P = fmt.Println
 var Format = fmt.Sprintf
+
+// sdvsdv
 
 func HashAndSalt(pwd []byte) string {
 
@@ -724,8 +727,8 @@ func TurkishDate(date int64) string {
 	}
 }
 
-func  GetLines(s string) []string {
-	lines := strings.Split(s,"\n")
+func GetLines(s string) []string {
+	lines := strings.Split(s, "\n")
 
 	var newLines []string
 
@@ -737,4 +740,3 @@ func  GetLines(s string) []string {
 	}
 	return newLines
 }
-
