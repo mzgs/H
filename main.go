@@ -26,6 +26,7 @@ import (
 	"unicode"
 
 	jsoniter "github.com/json-iterator/go"
+	"github.com/k0kubun/pp"
 	"golang.org/x/crypto/bcrypt"
 	"golang.org/x/text/runes"
 	"golang.org/x/text/transform"
@@ -34,8 +35,7 @@ import (
 
 var P = fmt.Println
 var Format = fmt.Sprintf
-
-// sdvsdv
+var Pretty = pp.Println
 
 func HashAndSalt(pwd []byte) string {
 
