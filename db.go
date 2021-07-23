@@ -45,7 +45,9 @@ func (m MongoDBHelper) Database() *mongo.Database {
 func (m MongoDBHelper) InsertOne(i interface{}) (primitive.ObjectID, error) {
 	r, err := m.Col(i).InsertOne(context.TODO(), i)
 
-	checkDBError("InsertOne", err)
+	if err != nil {
+		PL("Mongo InsertOne Error: ", err)
+	}
 
 	return r.InsertedID.(primitive.ObjectID), err
 }
@@ -55,7 +57,11 @@ func (m MongoDBHelper) InsertMany(documents []interface{}) error {
 		return errors.New("documents size 0")
 	}
 	_, err := m.Col(documents[0]).InsertMany(context.TODO(), documents)
-	checkDBError("InsertMany", err)
+
+	if err != nil {
+		PL("Mongo InsertMany Error: ", err)
+	}
+
 	return err
 }
 
@@ -65,7 +71,10 @@ func (m MongoDBHelper) UpdateOne(i interface{}) error {
 	id := reflect.Indirect(r).FieldByName("ID").Interface()
 
 	_, err := m.Col(i).UpdateOne(context.TODO(), bson.M{"_id": id}, bson.M{"$set": i})
-	checkDBError("UpdateOne", err)
+
+	if err != nil {
+		PL("Mongo UpdateOne Error: ", err)
+	}
 	return err
 }
 
@@ -76,13 +85,19 @@ func (m MongoDBHelper) UpdateMany(i interface{}) {
 func (m MongoDBHelper) DeleteMany(i interface{}, filters interface{}) error {
 
 	_, err := m.Col(i).DeleteMany(context.TODO(), filters)
-	checkDBError("DeleteMany", err)
+
+	if err != nil {
+		PL("Mongo DeleteMany Error: ", err)
+	}
 	return err
 }
 
 func (m MongoDBHelper) DeleteOne(i interface{}, filters interface{}) error {
 	_, err := m.Col(i).DeleteOne(context.TODO(), filters)
-	checkDBError("DeleteOne", err)
+
+	if err != nil {
+		PL("Mongo DeleteOne Error: ", err)
+	}
 	return err
 }
 
