@@ -15,7 +15,6 @@ import (
 )
 
 var MongoDB *mongo.Database
-var DB MongoDBHelper
 
 var DEBUG_DATABASE = false
 
@@ -28,7 +27,7 @@ func InitMongoDB(dbName string) MongoDBHelper {
 	}
 	MongoDB = client.Database(dbName)
 
-	return DB
+	return MongoDBHelper{}
 
 }
 
