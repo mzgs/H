@@ -19,7 +19,7 @@ var DB MongoDBHelper
 
 var DEBUG_DATABASE = false
 
-func InitMongoDB(dbName string) {
+func InitMongoDB(dbName string) MongoDBHelper {
 
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
 	client, err := mongo.Connect(ctx, options.Client().ApplyURI("mongodb://localhost:27017"))
@@ -27,6 +27,8 @@ func InitMongoDB(dbName string) {
 		log.Fatal("MONGODB init failed!", err)
 	}
 	MongoDB = client.Database(dbName)
+
+	return DB
 
 }
 
