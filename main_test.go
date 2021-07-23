@@ -2,6 +2,8 @@ package H
 
 import (
 	"testing"
+
+	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
 func TestUrl(t *testing.T) {
@@ -306,4 +308,33 @@ func TestUrlStringForFile(t *testing.T) {
 			}
 		})
 	}
+}
+
+func TestMongoDB(t *testing.T) {
+	InitMongoDB("mongotest")
+
+	type User struct {
+		ID       primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"`
+		Language string             `label:"Dil" type:"language" `
+		Title    string             `label:"Başlık" type:"h_text" `
+		Order    int                `label:"Sıra" type:"h_text" has:"hr"`
+		Content  string             `label:"Detaylar" type:"rich" has:"hr"`
+		Date     int64
+	}
+
+	var user []User
+	DB.Find(&user).Sort("-language", "order").Limit(2).All()
+
+	var userOne User
+	DB.Find(&userOne).Sort("language").One()
+	PL(userOne)
+
+	PL(len(user))
+
+	for _, v := range user {
+		P(v.Language, v.Title, v.Order)
+	}
+
+	t.Errorf("UrlStringForFile() = %v, want %v", "sca", "sdvf")
+
 }
