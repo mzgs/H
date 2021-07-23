@@ -16,8 +16,6 @@ import (
 
 var MongoDB *mongo.Database
 
-var DEBUG_DATABASE = false
-
 func InitMongoDB(dbName string) MongoDBHelper {
 
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
@@ -38,14 +36,6 @@ type MongoDBHelper struct {
 	limit             int
 	skip              int
 	sort              []string
-}
-
-func checkDBError(title string, err error) {
-	if DEBUG_DATABASE {
-		if err != nil {
-			log.Println("MongoDB Error", title, err)
-		}
-	}
 }
 
 func (m MongoDBHelper) Database() *mongo.Database {
@@ -182,18 +172,6 @@ func getFindOneOptions(m MongoDBHelper) *options.FindOneOptions {
 	return options
 }
 
-func (m MongoDBHelper) FindAll(i interface{}, opts ...*options.FindOptions) error {
-	return nil
-}
-
-func (m MongoDBHelper) FindOne(i interface{}, filters interface{}) error {
-
-	err := m.Col(i).FindOne(context.TODO(), filters).Decode(i)
-	checkDBError("FindOne", err)
-	return err
-
-}
-
 func (m MongoDBHelper) CreateSearchIndex(i interface{}, keys []string, weights bson.M) {
 
 	keysM := bson.M{}
@@ -209,14 +187,17 @@ func (m MongoDBHelper) CreateSearchIndex(i interface{}, keys []string, weights b
 			Options: opts,
 		},
 	})
-	checkDBError("CreateSearchIndex", err)
+
+	if err != nil {
+		PL("Mongo CreateSearchIndex Error: ", err)
+	}
+
 }
 
 func (m MongoDBHelper) DropAllIndex(i interface{}) {
 
 	_, err := m.Col(i).Indexes().DropAll(context.Background())
 	if err != nil {
-		checkDBError("DropAllIndex", err)
 
 	}
 }
@@ -232,7 +213,9 @@ func (m MongoDBHelper) FindByID(i interface{}, id primitive.ObjectID) error {
 
 func (m MongoDBHelper) Count(i interface{}, filters interface{}, opts ...*options.CountOptions) int {
 	count, err := m.Col(i).CountDocuments(context.TODO(), filters, opts...)
-	checkDBError("count", err)
+	if err != nil {
+		PL("Mongo count Error: ", err)
+	}
 	return int(count)
 }
 
@@ -241,10 +224,13 @@ func (m MongoDBHelper) Aggregate(colType interface{}, pipeline mongo.Pipeline, o
 	var showsWithInfo []bson.M
 
 	cur, err := m.Col(colType).Aggregate(context.TODO(), pipeline, opts...)
-	cur.All(context.TODO(), &showsWithInfo)
-
-	checkDBError("aggragate", err)
-
+	if err != nil {
+		PL("Mongo Aggregate Error: ", err)
+	}
+	err = cur.All(context.TODO(), &showsWithInfo)
+	if err != nil {
+		PL("Mongo Aggregate Error cur.ALL : ", err)
+	}
 	return showsWithInfo
 
 }
