@@ -2,6 +2,7 @@ package H
 
 import (
 	"io"
+	"io/ioutil"
 	"mime/multipart"
 	"path/filepath"
 	"reflect"
@@ -211,6 +212,25 @@ func InitCrudRouters(Server *gin.Engine, DB MongoDBHelper, structsPackageName st
 
 		//c.String(200,  "uploads/" + load)
 		c.File("public/uploads/" + load)
+
+	})
+
+	Server.GET("/uploads", func(c *gin.Context) {
+
+		files, _ := ioutil.ReadDir("public/uploads")
+
+		imageExt := []string{".png", ".jpg", ".jpeg", ".gif", ".ico", ".webp", ".svg", ".pdf"}
+
+		var images []string
+		for _, k := range files {
+			if !Contains(imageExt, filepath.Ext(k.Name())) {
+				continue
+			}
+
+			images = append(images, k.Name())
+		}
+
+		c.JSON(200, images)
 
 	})
 
