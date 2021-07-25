@@ -32,6 +32,11 @@ func InitGinServer() *gin.Engine {
 
 }
 
+func RunGinServer(Server *gin.Engine, PORT, appName string) {
+	PL(appName + " start at port: " + PORT)
+	Server.Run(":" + PORT)
+}
+
 func Render(w io.Writer, view string, variables jet.VarMap, data interface{}) {
 	t, err := View.GetTemplate(view + ".html")
 	if err != nil {
