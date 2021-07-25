@@ -740,3 +740,36 @@ func GetLines(s string) []string {
 	}
 	return newLines
 }
+
+func getUniqueFileName(fileName, inFolder string) string {
+
+	files, _ := ioutil.ReadDir(inFolder)
+	tryName := fileName
+
+	count := 2
+	for {
+
+		var fileExist bool
+
+		for _, k := range files {
+			if tryName == k.Name() {
+
+				ext := filepath.Ext(fileName)
+				nameWithoutExt := RemoveFromString(fileName, ext)
+				tryName = nameWithoutExt + Str(count) + ext
+				count++
+
+				fileExist = true
+			}
+		}
+
+		if !fileExist {
+			fileName = tryName
+			break
+		}
+
+	}
+
+	return fileName
+
+}
