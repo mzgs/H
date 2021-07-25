@@ -311,7 +311,7 @@ func TestUrlStringForFile(t *testing.T) {
 }
 
 func TestMongoDB(t *testing.T) {
-	InitMongoDB("mongotest")
+	DB := InitMongoDB("mongotest")
 
 	type User struct {
 		ID       primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"`
