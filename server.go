@@ -258,7 +258,7 @@ func InitCrudRouters(Server *gin.Engine, DB MongoDBHelper, structsPackageName st
 		v := jet.VarMap{}
 		v.Set("title", "Resimler")
 
-		Render(c.Writer, "admin/resimler", v, images)
+		Render(c.Writer, "resimler", v, images)
 
 	})
 
