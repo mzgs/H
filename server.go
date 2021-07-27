@@ -4,8 +4,10 @@ import (
 	"io"
 	"io/ioutil"
 	"mime/multipart"
+	"os"
 	"path/filepath"
 	"reflect"
+	"sort"
 	"strings"
 
 	"github.com/CloudyKit/jet"
@@ -232,6 +234,46 @@ func InitCrudRouters(Server *gin.Engine, DB MongoDBHelper, structsPackageName st
 
 		c.JSON(200, images)
 
+	})
+
+	Server.GET("/resimler", func(c *gin.Context) {
+
+		files, _ := ioutil.ReadDir("public/uploads")
+
+		sort.Slice(files, func(i, j int) bool {
+			return files[i].ModTime().Before(files[j].ModTime())
+		})
+
+		imageExt := []string{".png", ".jpg", ".jpeg", ".gif", ".ico", ".webp", ".svg", ".pdf"}
+
+		var images []string
+		for _, k := range files {
+			if !Contains(imageExt, filepath.Ext(k.Name())) {
+				continue
+			}
+
+			images = append(images, k.Name())
+		}
+
+		v := jet.VarMap{}
+		v.Set("title", "Resimler")
+
+		Render(c.Writer, "admin/resimler", v, images)
+
+	})
+
+	Server.POST("/delete-image", func(c *gin.Context) {
+		img := c.PostForm("img")
+		os.Remove("public/uploads/" + img)
+		c.JSON(200, true)
+	})
+
+	Server.GET("/downloadpng", func(c *gin.Context) {
+		load := c.Query("load")
+
+		outFile := "public/uploads/" + load
+
+		c.FileAttachment(outFile, filepath.Base(outFile))
 	})
 
 }
