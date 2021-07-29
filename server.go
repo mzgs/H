@@ -89,14 +89,13 @@ func InitCrudRouters(Server *gin.Engine, DB MongoDBHelper, structsPackageName st
 		jtSorting := c.Query("jtSorting")
 
 		filters := bson.M{}
-		_ = filters
 
 		c.Request.ParseForm()
 		for k, v := range c.Request.PostForm {
-			PL(k, v)
+			filters[k] = v[0]
 		}
 
-		dbQuery := DB.Find(x.Interface())
+		dbQuery := DB.Find(x.Interface(), filters)
 
 		if jtSorting != "" {
 			splitComma := strings.Split(jtSorting, ",")
