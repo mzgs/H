@@ -84,11 +84,17 @@ func InitCrudRouters(Server *gin.Engine, DB MongoDBHelper, structsPackageName st
 		x := reflect.New(slice.Type())
 		x.Elem().Set(slice)
 
-		PL(c.PostForm("name"))
-
 		jtPageSize := Int(c.Query("jtPageSize"))
 		jtStartIndex := Int(c.Query("jtStartIndex"))
 		jtSorting := c.Query("jtSorting")
+
+		filters := bson.M{}
+		_ = filters
+
+		c.Request.ParseForm()
+		for _, v := range c.Request.Form {
+			PL(v)
+		}
 
 		dbQuery := DB.Find(x.Interface())
 
