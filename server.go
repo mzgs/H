@@ -92,6 +92,11 @@ func InitCrudRouters(Server *gin.Engine, DB MongoDBHelper, structsPackageName st
 
 		c.Request.ParseForm()
 		for k, v := range c.Request.PostForm {
+
+			if k == "_id" {
+				filters[k] = DB.ObjectId(v[0])
+				continue
+			}
 			filters[k] = v[0]
 		}
 
