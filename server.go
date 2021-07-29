@@ -92,8 +92,8 @@ func InitCrudRouters(Server *gin.Engine, DB MongoDBHelper, structsPackageName st
 		_ = filters
 
 		c.Request.ParseForm()
-		for _, v := range c.Request.Form {
-			PL(v)
+		for k, v := range c.Request.Form {
+			PL(k, v)
 		}
 
 		dbQuery := DB.Find(x.Interface())
