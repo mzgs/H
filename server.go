@@ -233,7 +233,7 @@ func InitCrudRouters(Server *gin.Engine, DB MongoDBHelper, structsPackageName st
 
 		files, _ := ioutil.ReadDir("public/uploads")
 
-		imageExt := []string{".png", ".jpg", ".jpeg", ".gif", ".ico", ".webp", ".svg", ".pdf"}
+		imageExt := []string{".png", ".jpg", ".jpeg", ".gif", ".ico", ".webp", ".svg", ".pdf", ".ttf", ".otf"}
 
 		var images []string
 		for _, k := range files {
