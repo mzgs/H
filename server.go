@@ -295,7 +295,7 @@ func Vars(values ...interface{}) map[string]reflect.Value {
 	v := jet.VarMap{}
 
 	for i := 0; i < len(values); i += 2 {
-		v.Set(values[0].(string), values[1])
+		v.Set(values[i].(string), values[i+1])
 	}
 
 	return v
