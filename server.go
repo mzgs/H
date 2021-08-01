@@ -289,3 +289,14 @@ func InitCrudRouters(Server *gin.Engine, DB MongoDBHelper, structsPackageName st
 	})
 
 }
+
+func Vars(values ...interface{}) map[string]reflect.Value {
+
+	v := jet.VarMap{}
+
+	for i := 0; i < len(values); i += 2 {
+		v.Set(values[0].(string), values[1])
+	}
+
+	return v
+}
