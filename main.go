@@ -25,6 +25,7 @@ import (
 	"time"
 	"unicode"
 
+	Tinify "github.com/gwpp/tinify-go/tinify"
 	jsoniter "github.com/json-iterator/go"
 	"github.com/k0kubun/pp"
 	"golang.org/x/crypto/bcrypt"
@@ -771,5 +772,31 @@ func getUniqueFileName(fileName, inFolder string) string {
 	}
 
 	return fileName
+
+}
+
+func GetRandomNumber(max int) int {
+	s := mrand.NewSource(time.Now().Unix())
+	r := mrand.New(s)
+	return r.Intn(max)
+}
+
+func TinyPNG(input, output string) error {
+
+	keys := []string{"hzl3QCNty3fZDkl70ThZPqnMSpZ4Yb02", "LRlR8p3Tk2LyZ7Zjyby1BL5nds3WMQSH", "l1NFy7xfLbNkXrFvXXCc1wjZ3zklQm2G", "HJSGWrygrj1rN9YgZWyBf1SpPrz1Rj0x", "qkHnGMYDgStdl4dHzl0j66Y3ZSfKcD7H", "n1WK10Z7CBLs4kv4Sf5ZZTJQCgJRj2wl", "zHDhPf78Hxrj2NwlpWl8Tp5bNsddJ3FS", "sdkkDwyfKqM6z8MDgnqBNTQJGcTKfH68", "5S63QBhljN8lrZhbH13PmhNjRwcM3FfC", "LMpcgLy6ypYZ71GYTDdT56pjRM0q16bs", "pLpWFf01LqpxTBV65vffJR2qkqFp7wmP", "Lvdzn423mc5S9yBYzqDLRVM5vwCrvdJ5", "JSzhF5DYS0CMqwbXtP24RQxjwQ5rz6FM", "SkYJ5GQsppGbbrMt7dfxmx2BvKBdx1gj", "5qvySGSTn4dpxmxpc1YLs4TPXr3V6NNY", "SbvHFjgBlYch39LdbQ2RWGNf0r7Jm76Z", "9rxbwLJg8xY6Tr6DCJVZCHD88P7MZZ9p", "Nv945ymkc7bFQYbbSxd9F2nQsrkzg0rL", "ZlcnjDRSK6VHs7zCyQ516FT0pp2LBL3l", "6Q74Yf1D3QfKvvySvY7mb53t0XXn4LnL", "nsDnbVzD3Kg526G4KY3PBh9ypSgvjjGr", "HzQ7mwJshKfCYJzqwQHzNsC5rPstHdrH"}
+
+	Tinify.SetKey(keys[GetRandomNumber(len(keys))])
+	source, err := Tinify.FromFile(input)
+	if err != nil {
+
+		return err
+	}
+
+	err = source.ToFile(output)
+	if err != nil {
+
+		return err
+	}
+	return nil
 
 }
