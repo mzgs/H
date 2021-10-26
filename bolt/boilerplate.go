@@ -1,10 +1,15 @@
 package bolt
 
 import (
-	bolt "go.etcd.io/bbolt"
+	"encoding/json"
+	"errors"
+	"fmt"
 	"log"
 	"os"
 	"time"
+
+	jsoniter "github.com/json-iterator/go"
+	bolt "go.etcd.io/bbolt"
 )
 
 var database string
@@ -142,7 +147,7 @@ func GetAllKeyValues(bucket []byte) []BoltPair {
 
 func BoltSet(key string, i interface{}) error {
 
-	m, _ := jsoniter.Marshal(i)
+	m, _ := json.Marshal(i)
 
 	return Put([]byte("db"), []byte(key), m)
 }
@@ -152,7 +157,7 @@ func BoltGet(key string, i interface{}) error {
 	value := Get([]byte("db"), []byte(key))
 
 	if len(value) == 0 {
-		checkDBError("bolt_get_error:", nil)
+		fmt.Println("bolt_get_error:", nil)
 		return errors.New(key + " key is not found")
 	}
 	return jsoniter.Unmarshal(value, i)
