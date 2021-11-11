@@ -266,6 +266,10 @@ func Tif(condition bool, tifThen, tifElse interface{}) interface{} {
 	return tifElse
 }
 
+func TifStr(condition bool, tifThen, tifElse interface{}) string {
+	return Tif(condition, tifThen, tifElse).(string)
+}
+
 // MatchesAny returns true if any of the given items matches ( equals ) the subject ( search parameter )
 func MatchesAny(search interface{}, items ...interface{}) bool {
 	for _, v := range items {
