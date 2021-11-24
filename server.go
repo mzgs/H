@@ -245,7 +245,7 @@ func InitCrudRouters(Server *gin.Engine, DB MongoDBHelper, structsPackageName st
 		}
 
 		sort.Slice(images, func(i, j int) bool {
-			return !Contains([]string{".pdf", ".ttf", ".otf"}, images[i])
+			return !Contains([]string{".pdf", ".ttf", ".otf"}, filepath.Ext(images[i]))
 
 		})
 
