@@ -229,30 +229,6 @@ func InitCrudRouters(Server *gin.Engine, DB MongoDBHelper, structsPackageName st
 
 	})
 
-	Server.GET("/uploads", func(c *gin.Context) {
-
-		files, _ := ioutil.ReadDir("public/uploads")
-
-		imageExt := []string{".png", ".jpg", ".jpeg", ".gif", ".ico", ".webp", ".svg", ".pdf", ".ttf", ".otf"}
-
-		var images []string
-		for _, k := range files {
-			if !Contains(imageExt, filepath.Ext(k.Name())) {
-				continue
-			}
-
-			images = append(images, k.Name())
-		}
-
-		sort.Slice(images, func(i, j int) bool {
-			return !Contains([]string{".pdf", ".ttf", ".otf"}, filepath.Ext(images[i]))
-
-		})
-
-		c.JSON(200, images)
-
-	})
-
 	Server.GET("/resimler", func(c *gin.Context) {
 
 		files, _ := ioutil.ReadDir("public/uploads")
