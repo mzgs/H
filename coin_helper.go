@@ -75,8 +75,12 @@ func GetSymbolUrl(ex, symbol string) string {
 
 func GetSourceCoin(symbol string) string {
 
+	if symbol == "USDTUSD" {
+		return "USDT"
+	}
+
 	var coin string
-	targets := []string{"TRY", "USDT", "USD" , "BTC", "BNB", "TL"}
+	targets := []string{"TRY", "USDT", "USD", "BTC", "BNB", "TL"}
 
 	for _, value := range targets {
 		if strings.HasSuffix(symbol, value) {
@@ -89,7 +93,7 @@ func GetSourceCoin(symbol string) string {
 }
 
 func GetTargetCode(symbol string) string {
-	targets := []string{"TRY", "USDT", "BTC", "USD" , "BNB", "TL"}
+	targets := []string{"TRY", "USDT", "BTC", "USD", "BNB", "TL"}
 
 	for _, value := range targets {
 		if strings.HasSuffix(symbol, value) {
