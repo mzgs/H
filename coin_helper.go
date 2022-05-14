@@ -93,7 +93,7 @@ func GetSourceCoin(symbol string) string {
 }
 
 func GetTargetCode(symbol string) string {
-	targets := []string{"TRY", "USDT", "BTC", "USD", "BNB", "TL"}
+	targets := []string{"TRY", "USDT", "BTC", "USD", "BNB", "TL","BUSD"}
 
 	for _, value := range targets {
 		if strings.HasSuffix(symbol, value) {
