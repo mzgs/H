@@ -56,7 +56,7 @@ func UploadFile(c *gin.Context, file *multipart.FileHeader) string {
 
 	filename := filepath.Base(file.Filename)
 	filename = UrlStringForFile(filename)
-	filename = getUniqueFileName(filename, "public/uploads")
+	filename = GetUniqueFileName(filename, "public/uploads")
 
 	err := c.SaveUploadedFile(file, FM("public/uploads/{name}", filename))
 	if err != nil {
