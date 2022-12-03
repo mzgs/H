@@ -746,7 +746,7 @@ func GetLines(s string) []string {
 	return newLines
 }
 
-func getUniqueFileName(fileName, inFolder string) string {
+func GetUniqueFileName(fileName, inFolder string) string {
 
 	files, _ := ioutil.ReadDir(inFolder)
 	tryName := fileName
